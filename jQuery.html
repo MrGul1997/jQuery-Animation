@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Practice</title>
+    <style>
+        body{
+            position: relative;
+            background-image: url(road.jpg);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            height: 97.4vh;
+            overflow-x: hidden;
+        }
+
+        img{
+            position: absolute;
+            top: 50vh;
+            height: 35vh;
+            /* border: 1px solid; */
+        }
+
+        .btngroup{
+            position: absolute;
+            top: 6vh;
+            right: 40vw;
+            /* border: 1px solid; */
+        }
+
+        .btngroup>button{
+            background: transparent;
+            color: white;
+            cursor: pointer;
+        }
+
+        .btngroup>button:hover{
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+    
+    <img src="car.png" class="cat" alt="" style="width: 25%;display: block;left: 0;position: relative;">
+    <div class="btngroup">
+    <button class="btn1" onclick="moveRight()">Forward</button>
+    <button class="btn2" onclick="stop()">Break</button>
+    <button class="btn3" onclick="back()">Reverse</button>
+    <button class="btn4" onclick="reset()">Reset</button>
+</div>
+
+<script src="./jquery-3.4.1.min.js"></script>
+<script>
+
+    function moveRight(){
+            $('.cat').animate(
+                {
+                left:"+=200px",
+                },
+            1000,
+            "swing",
+            )
+    }
+
+    function stop(){
+        $('.cat').animate.stop()
+    }
+    function back(){
+        $('.cat').animate(
+                {
+                left:"-=200px",
+                },
+            1000,
+            "swing",
+            )
+    }
+
+    function reset(){
+        $('.cat').animate(
+                {
+                left:"0px",
+                },
+            1000,
+            "swing",
+            )
+    }
+</script>
+</body>
+</html>
